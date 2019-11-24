@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ExtensionManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ExtensionBundleId="com.adobe.MYMIROEXT" ExtensionBundleVersion="1.0" Version="6.0"> <!-- MAJOR-VERSION-UPDATE-MARKER -->
+    <ExtensionList>
+        <Extension Id="com.adobe.MYMIROEXT.Panel" Version="6.1.0"/>
+    </ExtensionList>
+    <ExecutionEnvironment>
+        <HostList>
+            <Host Name="IDSN" Version="11.0"/>
+            <Host Name="ILST" Version="19.0"/>
+            <Host Name="DEMO" Version="1.0"/>
+        </HostList>
+        <LocaleList>
+            <Locale Code="All"/>
+        </LocaleList>
+        <RequiredRuntimeList>
+            <RequiredRuntime Name="CSXS" Version="6.0"/> <!-- MAJOR-VERSION-UPDATE-MARKER -->
+        </RequiredRuntimeList>
+    </ExecutionEnvironment>
+    <DispatchInfoList>
+        <Extension Id="com.adobe.MYMIROEXT.Panel">
+            <DispatchInfo>
+                <Resources>
+                    <MainPath>./index.html</MainPath>
+					<ScriptPath>./jsx/core.jsx</ScriptPath>
+                    <CEFCommandLine>
+                        <Parameter>--enable-speech-input</Parameter>
+						<Parameter>--enable-media-stream</Parameter>
+						<Parameter>--enable-nodejs</Parameter>
+                    </CEFCommandLine>
+                </Resources>
+                <Lifecycle>
+                    <AutoVisible>true</AutoVisible>
+                </Lifecycle>
+                <UI>
+                    <Type>Panel</Type>
+                    <Menu>Miro Panel</Menu>
+                    <Geometry>
+                        <Size>
+                            <Height>150</Height>
+                            <Width>300</Width>
+                        </Size>
+                        <MaxSize>
+                            <Height>300</Height>
+                            <Width>300</Width>
+                        </MaxSize>
+                        <MinSize>
+                            <Height>150</Height>
+                            <Width>150</Width>
+                        </MinSize>
+                    </Geometry>
+                    <Icons>
+                        <Icon Type="Normal">./TeEx_HTML_TEST_23x23_N.png</Icon>
+                        <Icon Type="RollOver">./TeEx_HTML_TEST_23x23_R.png</Icon>
+                        <Icon Type="DarkNormal">./TeEx_HTML_TEST_23x23_DN.png</Icon>
+                        <Icon Type="DarkRollOver">./TeEx_HTML_TEST_23x23_DR.png</Icon>
+                    </Icons>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+    </DispatchInfoList>
+</ExtensionManifest>

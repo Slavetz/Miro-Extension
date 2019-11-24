@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionList>
+    <Extension Id="com.adobe.MYMIROEXT.Panel">
+        <HostList>
+            <Host Name="IDSN" Port="9001"/>
+            <Host Name="ILST" Port="9002"/>
+            <Host Name="DEMO" Port="9003"/>
+        </HostList>
+    </Extension>
+</ExtensionList>
