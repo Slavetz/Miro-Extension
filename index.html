@@ -9,6 +9,7 @@
         body { margin: 0; padding: 0; font-family: 'LucidaGrande'; font-size: 10px }
         #action { width: 100%; text-align: center}
         .row { padding: 10px; box-sizing: border-box; }
+        #mirolink {text-align: center; margin-bottom: 0}
     </style>
 </head>
 <body class="dark">
@@ -22,6 +23,7 @@
             </select>
         </label>
         <button onclick="exportMiroZIP();">Export to Miro</button>
+        <p id="mirolink" onclick="cep.util.openURLInDefaultBrowser('https://miro.com')">go to miro.com</p>
     </div>
 </body>
 <script>
