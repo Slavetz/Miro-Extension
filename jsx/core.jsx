@@ -181,13 +181,12 @@ function testFunction() {
   return decodeURI(savePath.relativeURI);
 }
 
-function exportPages(options) {
+function getPages(options) {
 
-  var pages = void 0;
   var env = options.env;
-  var path = options.path;
   var scale = options.scale;
 
+  var pages = void 0;
   /** Получаем страницы */
   if (env === 'IDSN') {
     pages = getPagesObjectFromInDesign(scale);
@@ -201,6 +200,16 @@ function exportPages(options) {
   var savePath = File.saveDialog('Save path', '*.miro');
   if (savePath === null) return;
 
+  return _jsonStringify({ path: decodeURI(savePath.relativeURI), pages: pages });
+}
+
+function exportPages(options) {
+
+  var pages = options.pages;
+  var env = options.env;
+  var path = options.path;
+  var scale = options.scale;
+
   /** Пишем все картинки */
   if (env === 'IDSN') {
     exportImagesFromInDesign(pages, path, scale);
@@ -210,7 +219,7 @@ function exportPages(options) {
 
   exportJSON(pages, path);
 
-  return _jsonStringify({ path: decodeURI(savePath.relativeURI), pages: pages });
+  return true;
 }
 
 /**+++++++++++++++++++++++++++++++++++++++++++++++++**/
