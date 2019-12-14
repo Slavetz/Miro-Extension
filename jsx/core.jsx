@@ -182,9 +182,9 @@ function testFunction() {
 }
 
 function getPages(options) {
+  var env = options.env,
+      scale = options.scale;
 
-  var env = options.env;
-  var scale = options.scale;
 
   var pages = void 0;
   /** Получаем страницы */
@@ -204,13 +204,13 @@ function getPages(options) {
 }
 
 function exportPages(options) {
-
-  var pages = options.pages;
-  var env = options.env;
-  var path = options.path;
-  var scale = options.scale;
+  var pages = options.pages,
+      env = options.env,
+      path = options.path,
+      scale = options.scale;
 
   /** Пишем все картинки */
+
   if (env === 'IDSN') {
     exportImagesFromInDesign(pages, path, scale);
   } else if (env === 'ILST') {
@@ -385,7 +385,6 @@ function exportJSON(json, saveStr) {
   file.open("w");
 
   var jsonFileStr = _jsonStringify(json);
-  //jsonFileStr = jsonFileStr.replace(/"(\d{15,})"(?!:)/g,'$1');
 
   file.write(jsonFileStr);
   file.close();
